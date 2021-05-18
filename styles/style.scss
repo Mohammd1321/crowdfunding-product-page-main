@@ -1,0 +1,498 @@
+@use 'var' as *;
+@use 'methods' as *;
+
+*,*::after,*::before {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Commissioner', sans-serif;
+}
+
+.active {
+  top: 100px;
+}
+
+html {
+  font-size: 16px;
+}
+
+$very-light-black: rgba(0, 0, 0,.1);
+$very-light-gray: hsl(0, 0%, 48%,.1);
+
+p {
+  color: hsl(0, 0%, 48%,.8);
+}
+
+%normalButton {
+  outline: none;
+  border: none;
+}
+
+.menu {
+  display: none;
+}
+
+.mainImg {
+  height: 500px;
+  width: 100%;
+  background-image: url('/images/image-hero-desktop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+  width: 80%;
+  margin: 0px auto;
+}
+
+.mainNav h2, .mainNav a {
+  color: white;
+}
+
+
+li {
+  display: inline-block;
+  padding: 0rem 1rem;
+  &:last-child {
+    padding-right: 0rem;
+  }
+}
+
+main {
+  display: grid;
+  justify-items: center;
+}
+
+
+.firstCard {
+  text-align: center;
+  position: relative;
+  margin-top: -120px;
+}
+
+.firstCard img {
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.firstCard > h3 {
+  color: hsl(0, 0%, 48%,.7);
+  margin: 1.5rem 0rem 3rem 0rem;
+}
+.firstCard h1 {
+  margin-top: 1rem;
+  font-weight: bolder;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+}
+
+.backToProject, .backToProject span {
+  @include flex(space-between,center);
+}
+
+button {
+  background-color: $moderate-cyan;
+  color: white;
+  @extend %normalButton;
+  padding: 20.5px 3rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color .3s ease-in;
+  &:hover {
+    background-color: $dark-cyan;
+  }
+}
+
+.backToProject span, button {
+  border-radius: 30px;
+}
+
+ body,.backToProject span {
+  background-color: $very-light-gray;
+}
+
+.backToProject span {
+  color: $moderate-cyan;
+  &:hover .circle {
+    fill: #2F2F2F;
+  }
+  &:hover .logo {
+    fill: #B1B1B1;
+  }
+  &:hover {
+    color: $dark-gray;
+  }
+}
+
+.circle {
+  fill: $moderate-cyan;
+}
+
+.logo {
+  fill: white;
+}
+
+.backToProject h3 {
+  padding: 0rem 1.5rem;
+}
+
+.firstCard,.total-people,.payPlans,.smaller {
+  padding: 3rem;
+  background-color: white;
+  box-shadow: 0px 0px 5px $very-light-black;
+  width: min(800px,90%);
+  border-radius: 5px;
+}
+
+.smaller {
+  width: min(500px,90%);
+}
+
+
+b {
+  font-size: 2rem;
+  font-family: 'Commissioner', sans-serif;
+}
+
+.total-people {
+  margin: 2rem 0rem;
+}
+
+.total-people p {
+  margin-top: .5rem;
+}
+
+.total-people span {
+  display: inline-block;
+  padding: 0rem 8%;
+  border-left: 2px solid $very-light-black;
+}
+
+.total-people span:first-child {
+  padding-left: 0%;
+  border: 0px;
+}
+
+
+.progress,.progress::after {
+  border: 7px solid $very-light-black;
+  margin-top: 3rem ;
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  border: 7px solid $moderate-cyan;
+  top: -7px;
+  margin: 0px;
+  left: -7px;
+}
+
+.payPlans {
+  position: relative;
+}
+.payPlans svg {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.payPlans p,.smaller p{
+  margin: 1rem 0rem;
+  line-height: 30px;
+}
+
+.pledge,.remaning {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pledge {
+  grid-area: text1;
+}
+
+.deals p {
+  grid-area: text2;
+}
+
+
+.deals,.deals2 {
+  border-radius: 8px;
+  border: 2px solid $very-light-black;
+  margin-bottom: 2rem;
+  padding: 2rem 3rem;
+}
+
+.deals:last-child,.deals2:nth-of-type(4) {
+  pointer-events: none;
+  opacity: .4;
+  margin-bottom: 0px;
+}
+
+
+.pledge h4 {
+  color: $moderate-cyan;
+}
+
+.module {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 120%;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 1;
+}
+
+.overlay,.overlay2 {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(0, 0, 0,.5);
+  z-index: -1;
+}
+
+.overlay2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+
+.radio {
+  font-weight: bolder;
+  padding-right: 10px;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  &:hover {
+    color: $moderate-cyan;
+  }
+  &:hover .radioStyle {
+    border-color: $moderate-cyan;
+  }
+}
+
+.radio input {
+  display: none;
+}
+
+.radio input:checked + .radioStyle::after {
+  transform: scale(1);
+}
+
+.radioStyle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid $dark-gray;
+  border-radius: 50%;
+  margin: 0rem 1.2rem 0rem -2.4rem;
+  padding: 2px;
+}
+
+.radioStyle::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: $moderate-cyan;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+
+.pay {
+  display: flex;
+  padding: 2rem 1rem;
+  justify-content: space-between;
+}
+
+.submit {
+  display: flex;
+}
+
+.pay h4 {
+  align-self: center;
+  color: rgba(122, 122, 122, 0.8);
+}
+
+
+.proceed{
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  margin-left: 10px;
+}
+
+.pay input {
+  border-radius: 30px;
+  outline: none;
+  border: 1px solid $moderate-cyan;
+  width: 112.59px;
+  padding-left: 50px;
+  height: 100%;
+  font-weight: bolder;
+}
+
+form {
+  position: relative;
+}
+
+form span {
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-50%);
+  color: rgba(128, 128, 128,.5);
+}
+
+
+.deals2 {
+  padding: 0px;
+}
+.deals2.active {
+  border-color: $moderate-cyan;
+}
+
+.words {
+  padding: 1.5rem 4rem;
+}
+
+.module.show {
+  display: flex;
+}
+
+
+.hide {
+  height: 0px;
+  overflow: hidden;
+}
+
+
+.hide.active {
+  height: initial;
+}
+
+
+.thanks {
+  display: none;
+}
+
+.thanks.show {
+  display: block;
+}
+
+.smaller {
+ text-align: center;
+}
+
+.smaller button {
+  font-size: 1.2rem;
+}
+.smaller img {
+  margin-bottom: 2rem;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+@media (max-width: 700px) {
+  .mainImg {
+    background-image: url('/images/image-hero-mobile.jpg');
+  }
+  .menu {
+    display: block;
+  }
+  nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(250px,80%);
+    top: -50%;
+    transition: .6s ease;
+  }
+  ul {
+    background-color: white;
+    border-radius: 5px;
+  }
+  li {
+    display: block;
+    padding: 1rem 0rem 1rem 1rem;
+    border-bottom: 2px solid black;
+  }
+  .mainNav a {
+    color: black;
+    font-weight: bolder;
+  }
+  .backToProject span h3 {
+    display: none;
+  }
+  .backToProject button {
+    margin-right: .7rem;
+    padding: 20.5px 1.5rem;
+  }
+  .firstCard,.total-people,.payPlans {
+    padding: 2rem;
+  }
+
+  .total-people span {
+    padding: 1rem 0rem;
+    text-align: center;
+    display: block;
+    border-left: 0px;
+  }
+
+  .total-people span,.total-people span:first-child,li {
+    border-bottom: 2px solid $very-light-black;
+  }
+  .total-people span:last-of-type {
+    border-bottom: 0px;
+  }
+  .deals {
+    padding: 1.5rem;
+  }
+  .pledge,.remaning {
+    flex-direction: column;
+    @include flex(center,flex-start);
+  }
+  .pledge h2 {
+    font-size: 1rem;
+  }
+  .remaning button {
+    margin-top: 2rem;
+  }
+  .pay {
+    flex-direction: column;
+  }
+  .submit {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 414px) {
+  .remaning button {
+    padding: 20.5px 1.5rem;
+  }
+  .firstCard p,.total-people p,.payPlans p {
+    font-size: .8rem;
+  }
+}
+
+
