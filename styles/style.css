@@ -394,7 +394,7 @@ form span {
 
 @media (max-width: 700px) {
   .mainImg {
-    background-image: url("/images/image-hero-mobile.jpg");
+    background-image: url("../images/image-hero-mobile.jpg");
   }
 
   .menu {
