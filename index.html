@@ -63,18 +63,18 @@
         </div>
       </div>
       <div class="total-people">
-        <span>
+        <div class="worth">
           <b>$89,914</b>
           <p>of $100,000 backed</p>
-        </span>
-        <span>
+        </div>
+        <div class="worth">
           <b>5,007</b>
           <p>total backers</p>
-        </span>
-        <span>
+        </div>
+        <div class="worth">
           <b>56</b>
           <p>days left</p>
-        </span>
+        </div>
         <div class="progress"></div>
       </div>
       <div class="payPlans">
@@ -139,7 +139,7 @@
       </div>
     </main>
     <div class="thanks">
-      <div class="overlay2">
+      <div class="overlay">
         <div class="smaller">
           <img src="images\icon-check.svg" alt="">
           <h2>Thanks for your support!</h2>
@@ -151,7 +151,7 @@
       </div>
     </div>
     <div class="module">
-      <div class="payPlans">
+      <div class="payPlans modules">
         <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z" fill="#000" fill-rule="evenodd" opacity=".4"/></svg>
         <h2>back this project</h2>
         <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world ?</p>
@@ -178,9 +178,10 @@
               <div class="pay">
                 <h4>Enter Your Pledge</h4>
                 <div class="submit">
-                  <form action="">
+                  <form action="GET">
                     <span>$</span>
-                    <input type="text" value="0">
+                    <label for="text"></label>
+                    <input type="text" name="awesome" value="0" id="text">
                   </form>
                   <button class="proceed">continue</button>
                 </div>
@@ -213,9 +214,10 @@
               <div class="pay">
                 <h4>Enter Your Pledge</h4>
                 <div class="submit">
-                  <form action="">
+                  <form action="GET">
                     <span>$</span>
-                    <input type="text" value="25">
+                    <label for="text2"></label>
+                    <input type="text" name="awesome2" value="25" id="text2">
                   </form>
                   <button class="proceed">continue</button>
                 </div>
@@ -248,9 +250,10 @@
               <div class="pay">
                 <h4>Enter Your Pledge</h4>
                 <div class="submit">
-                  <form action="">
+                  <form action="GET">
                     <span>$</span>
-                    <input type="text" value="75">
+                    <label for="text3"></label>
+                    <input type="text" name="awesome3" value="75" id="text3">
                   </form>
                   <button class="proceed">continue</button>
                 </div>
@@ -278,7 +281,7 @@
             </p>
           </div>
         </div>
-      <div class="overlay"></div>
+      </div>
     </div>
     <script src="crowdFun.js"></script>
   </body>

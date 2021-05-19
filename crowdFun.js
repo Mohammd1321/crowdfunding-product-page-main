@@ -15,18 +15,9 @@ const gotIt = document.querySelector('.thanks button');
 buttons.forEach(button => {
   button.addEventListener('click',function(){
     let target = button.dataset.id;
-    const element1 = document.querySelectorAll(`#${target} .activeState`); 
-    const element2 = document.querySelector(`#${target} .radio input`)
-    const element3 = document.querySelector(`#${target} .proceed`);
+    const element = document.querySelector(`#${target}`); 
     addOrRemove(true);
-    element1.forEach(elem => {
-      elem.classList.add('active');
-    })
-    element2.setAttribute('checked','');
-    element3.addEventListener('click',function() {
-      addOrRemove();
-      thanks.classList.add('show');
-    })
+    display(element);
   })
 })
 
@@ -43,20 +34,25 @@ mainTarget.forEach(iterate => {
         removeActive();
       }
     })
-    iterate.querySelectorAll('.activeState').forEach(active =>{
-      active.classList.add('active');
-    })
-    iterate.querySelector('.radio input').setAttribute('checked',' ');
-    proceed.addEventListener('click',function() {
-      addOrRemove();
-      thanks.classList.add('show');
-    })
+    display(iterate);
   })
 })
 
 gotIt.addEventListener('click',function() {
   thanks.classList.remove('show');
 })
+
+
+function display(item) {
+  item.querySelectorAll('.activeState').forEach(elem => {
+    elem.classList.add('active');
+  })
+  item.querySelector('.radio input').setAttribute('checked','');
+  item.querySelector('.proceed').addEventListener('click',function() {
+    addOrRemove();
+    thanks.classList.add('show');
+  })
+}
 
 
 

@@ -169,13 +169,13 @@ b {
   margin-top: .5rem;
 }
 
-.total-people span {
+.total-people .worth {
   display: inline-block;
   padding: 0rem 8%;
   border-left: 2px solid $very-light-black;
 }
 
-.total-people span:first-child {
+.total-people .worth:first-child {
   padding-left: 0%;
   border: 0px;
 }
@@ -198,9 +198,15 @@ b {
   left: -7px;
 }
 
-.payPlans {
+.payPlans.modules {
   position: relative;
+  margin: 7rem auto;
 }
+
+.payPlans {
+  margin: 0px;
+}
+
 .payPlans svg {
   position: absolute;
   top: 30px;
@@ -246,33 +252,27 @@ b {
   color: $moderate-cyan;
 }
 
-.module {
+
+.overlay,.module {
   display: none;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 120%;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  z-index: 1;
-}
-
-.overlay,.overlay2 {
   position: fixed;
+  background-color: rgba(0, 0, 0,.5);
   top: 0px;
   left: 0px;
-  bottom: 0px;
-  right: 0px;
-  background-color: rgba(0, 0, 0,.5);
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow: auto;
 }
 
-.overlay2 {
+ 
+
+
+
+.overlay {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
 }
 
 
@@ -326,6 +326,7 @@ b {
 
 .submit {
   display: flex;
+  justify-content: space-around;
 }
 
 .pay h4 {
@@ -375,7 +376,7 @@ form span {
 }
 
 .module.show {
-  display: flex;
+  display: block;
 }
 
 
@@ -492,6 +493,12 @@ form span {
   }
   .firstCard p,.total-people p,.payPlans p {
     font-size: .8rem;
+  }
+  .proceed {
+    padding: 1rem .8rem;
+  }
+  .pay input {
+    width: 90.15px;
   }
 }
 
