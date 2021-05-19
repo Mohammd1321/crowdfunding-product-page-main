@@ -453,17 +453,17 @@ form span {
     padding: 2rem;
   }
 
-  .total-people span {
+  .total-people .worth {
     padding: 1rem 0rem;
     text-align: center;
     display: block;
     border-left: 0px;
   }
 
-  .total-people span,.total-people span:first-child,li {
+  .total-people .worth,.total-people .worth:first-child,li {
     border-bottom: 2px solid $very-light-black;
   }
-  .total-people span:last-of-type {
+  .total-people .worth:last-of-type {
     border-bottom: 0px;
   }
   .deals {
